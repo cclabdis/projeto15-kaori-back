@@ -6,7 +6,7 @@ export const handleLogin = async (req, res) => {
   const sessionData = { ...req.body, time: Date.now() };
   await db.collection("session").insertOne(sessionData);
 
-  res.status(200).send(sessionData);
+  res.status(200).send({sessionData});
 };
 
 export const handleSignUp = async (req, res) => {
